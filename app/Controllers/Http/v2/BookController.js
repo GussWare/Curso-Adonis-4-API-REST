@@ -27,15 +27,15 @@ class BookController {
 
     if (err) {
         console.log(err);
-        return response.status(500).send({ message: 'Error mejor llora :v.' });
+        return response.status(500).json({ message: 'Error mejor llora :v.' });
     } else {
         client.IsValidISBN13(args, (err, result) => {
             if (err) {
                 console.log(err);
-                return response.status(500).send({ message: 'Error mejor sigue llorando  :v.' });
+                return response.status(500).json({ message: 'Error mejor sigue llorando  :v.' });
             } else {
                 console.log(result);
-                return response.status(200).send(result);
+                return response.status(200).json(result);
             }
         });
     }
